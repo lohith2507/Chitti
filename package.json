@@ -1,0 +1,74 @@
+{
+  "name": "chitti",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server.js",
+    "preview": "vite preview",
+    "prod": "npm run build && node server.js",
+    "bundle": "vite build && esbuild server.js --bundle --platform=node --format=cjs --outfile=server.bundle.cjs",
+    "exe": "npm run bundle && pkg server.bundle.cjs --targets node22-win-x64 --output release/Chitti.exe --config package.json",
+    "electron:dev": "npm run bundle && electron .",
+    "electron:build": "npm run bundle && electron-builder --win"
+  },
+  "pkg": {
+    "assets": [
+      "dist/**/*"
+    ]
+  },
+  "build": {
+    "appId": "com.lohith.chitti",
+    "productName": "Chitti",
+    "directories": {
+      "output": "release-desktop"
+    },
+    "files": [
+      "electron/**/*",
+      "dist/**/*",
+      "server.bundle.cjs"
+    ],
+    "extraResources": [
+      {
+        "from": ".env",
+        "to": ".env"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Chitti"
+    }
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2",
+    "@yao-pkg/pkg": "^6.20.0",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.1",
+    "vite": "^6.3.5"
+  }
+}

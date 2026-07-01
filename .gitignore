@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+server.bundle.cjs
+build
+release
+
+release-desktop
+*.exe
