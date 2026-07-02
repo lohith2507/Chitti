@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 440" width="100%" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#8b949e"/>
+    </marker>
+    <clipPath id="screen">
+      <rect x="654" y="114" width="272" height="158" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1000" height="440" rx="16" fill="#0d1117"/>
+  <rect x="1" y="1" width="998" height="438" rx="16" fill="none" stroke="#30363d" stroke-width="1"/>
+
+  <!-- title + subtitle -->
+  <text x="500" y="40" text-anchor="middle" fill="#e6edf3" font-size="25" font-weight="700">Control your PC from your phone</text>
+  <text x="500" y="66" text-anchor="middle" fill="#8b949e" font-size="14">Say it on mobile, Chitti runs it on your PC in real time</text>
+
+  <!-- ================= signal path (phone to PC) ================= -->
+  <path id="sig" d="M224 240 C 380 240, 500 190, 648 200" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)">
+    <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- signal rings emitting from phone -->
+  <circle cx="222" cy="240" r="6" fill="none" stroke="#58a6ff" stroke-width="2" opacity="0">
+    <animate attributeName="r" values="6;26" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="222" cy="240" r="6" fill="none" stroke="#58a6ff" stroke-width="2" opacity="0">
+    <animate attributeName="r" values="6;26" dur="1.6s" begin="0.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0" dur="1.6s" begin="0.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- traveling data packet -->
+  <circle r="12" fill="#58a6ff" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.25;0.25;0;0" keyTimes="0;0.26;0.3;0.49;0.52;1" dur="12s" repeatCount="indefinite"/>
+    <animateMotion dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.27;0.5;1" calcMode="linear">
+      <mpath xlink:href="#sig"/>
+    </animateMotion>
+  </circle>
+  <circle r="6" fill="#58a6ff" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.26;0.3;0.49;0.52;1" dur="12s" repeatCount="indefinite"/>
+    <animateMotion dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.27;0.5;1" calcMode="linear">
+      <mpath xlink:href="#sig"/>
+    </animateMotion>
+  </circle>
+
+  <!-- ================= PHONE ================= -->
+  <g>
+    <rect x="70" y="105" width="150" height="250" rx="24" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="82" y="140" width="126" height="180" rx="6" fill="#0d1117"/>
+    <rect x="125" y="116" width="40" height="8" rx="4" fill="#30363d"/>
+    <rect x="120" y="332" width="50" height="4" rx="2" fill="#30363d"/>
+
+    <text x="145" y="160" text-anchor="middle" fill="#8b949e" font-size="11" font-weight="600">Chitti</text>
+    <line x1="92" y1="168" x2="198" y2="168" stroke="#21262d" stroke-width="1"/>
+
+    <!-- voice command bubble -->
+    <rect x="92" y="176" width="108" height="76" rx="10" fill="#1f6feb"/>
+    <text x="146" y="197" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="600" opacity="0">open netflix
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.07;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="146" y="214" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="600" opacity="0">and play
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.13;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="146" y="231" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="600" opacity="0">spider-man
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.19;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- equalizer bars (listening) -->
+    <g fill="#2dd4bf">
+      <rect x="126" y="266" width="5" height="6">
+        <animate attributeName="height" values="4;14;6;12;4" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="270;260;268;262;270" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="136" y="262" width="5" height="12">
+        <animate attributeName="height" values="12;5;15;7;12" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="262;269;259;267;262" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="146" y="260" width="5" height="14">
+        <animate attributeName="height" values="14;7;13;5;14" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="260;267;261;269;260" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="156" y="262" width="5" height="12">
+        <animate attributeName="height" values="10;15;6;13;10" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="264;259;268;261;264" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="166" y="266" width="5" height="6">
+        <animate attributeName="height" values="6;12;4;14;6" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="268;262;270;260;268" dur="1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- mic button -->
+    <circle cx="146" cy="298" r="16" fill="none" stroke="#f85149" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="16;28" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="146" cy="298" r="16" fill="#f85149"/>
+    <rect x="141" y="290" width="10" height="14" rx="5" fill="#ffffff"/>
+    <rect x="145" y="305" width="2" height="4" fill="#ffffff"/>
+    <text x="145" y="379" text-anchor="middle" fill="#8b949e" font-size="11">You (voice)</text>
+  </g>
+
+  <!-- ================= PC MONITOR ================= -->
+  <g>
+    <rect x="640" y="100" width="300" height="190" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="775" y="290" width="30" height="24" fill="#30363d"/>
+    <rect x="735" y="314" width="110" height="10" rx="4" fill="#30363d"/>
+
+    <!-- SCENE A: idle desktop -->
+    <g clip-path="url(#screen)">
+      <g opacity="1">
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.48;0.52;1" dur="12s" repeatCount="indefinite"/>
+        <rect x="654" y="114" width="272" height="158" fill="#0d1117"/>
+        <text x="790" y="198" text-anchor="middle" fill="#8b949e" font-size="14">Chitti ready</text>
+        <rect x="654" y="256" width="272" height="16" fill="#161b22"/>
+        <circle cx="668" cy="264" r="4" fill="#3fb950"/>
+      </g>
+    </g>
+
+    <!-- SCENE B: Netflix opening -->
+    <g clip-path="url(#screen)">
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.48;0.52;0.73;0.77;1" dur="12s" repeatCount="indefinite"/>
+        <rect x="654" y="114" width="272" height="158" fill="#000000"/>
+        <g transform="translate(790,196)">
+          <animateTransform attributeName="transform" type="scale" values="0.3;1;1" keyTimes="0;0.12;1" dur="12s" repeatCount="indefinite" additive="sum"/>
+          <text x="0" y="34" text-anchor="middle" font-size="104" font-weight="800" fill="#e50914">N</text>
+        </g>
+        <text x="790" y="256" text-anchor="middle" fill="#e50914" font-size="13" font-weight="700" letter-spacing="4">NETFLIX</text>
+      </g>
+    </g>
+
+    <!-- SCENE C: Spider-Man playing -->
+    <g clip-path="url(#screen)">
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.73;0.77;1" dur="12s" repeatCount="indefinite"/>
+        <rect x="654" y="114" width="272" height="79" fill="#3d0a12"/>
+        <rect x="654" y="193" width="272" height="79" fill="#0a1330"/>
+        <!-- web in top-left corner -->
+        <g stroke="#6e7681" stroke-width="1" fill="none" opacity="0.45">
+          <line x1="654" y1="114" x2="654" y2="180"/>
+          <line x1="654" y1="114" x2="690" y2="168"/>
+          <line x1="654" y1="114" x2="712" y2="140"/>
+          <line x1="654" y1="114" x2="720" y2="114"/>
+          <path d="M654 150 Q 676 158 682 176"/>
+          <path d="M654 132 Q 690 138 706 158"/>
+        </g>
+        <!-- spider emblem -->
+        <g stroke="#b31217" stroke-width="2" fill="#b31217">
+          <ellipse cx="790" cy="214" rx="8" ry="11"/>
+          <line x1="783" y1="210" x2="763" y2="200"/>
+          <line x1="782" y1="214" x2="760" y2="214"/>
+          <line x1="783" y1="219" x2="764" y2="229"/>
+          <line x1="797" y1="210" x2="817" y2="200"/>
+          <line x1="798" y1="214" x2="820" y2="214"/>
+          <line x1="797" y1="219" x2="816" y2="229"/>
+        </g>
+        <text x="790" y="176" text-anchor="middle" fill="#e50914" font-size="24" font-weight="800" letter-spacing="2">SPIDER-MAN</text>
+        <!-- progress bar -->
+        <path d="M666 260 L666 268 L673 264 Z" fill="#ffffff"/>
+        <rect x="680" y="261" width="230" height="5" rx="2" fill="#30363d"/>
+        <rect x="680" y="261" width="0" height="5" rx="2" fill="#e50914">
+          <animate attributeName="width" values="0;0;230" keyTimes="0;0.77;1" dur="12s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+
+    <text x="790" y="345" text-anchor="middle" fill="#8b949e" font-size="11">Your PC</text>
+  </g>
+
+  <!-- ================= status line ================= -->
+  <g text-anchor="middle" font-size="13" font-weight="600">
+    <text x="430" y="405" fill="#58a6ff" opacity="0">Listening to your voice...
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.23;0.27;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="430" y="405" fill="#bc8cff" opacity="0">Sending command to your PC...
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.27;0.31;0.48;0.52;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="430" y="405" fill="#e50914" opacity="0">Opening Netflix...
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.52;0.56;0.73;0.77;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="430" y="405" fill="#3fb950" opacity="0">Now playing Spider-Man
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.77;0.81;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- footer -->
+  <text x="500" y="430" text-anchor="middle" fill="#8b949e" font-size="11">Chitti  |  phone voice command to real PC action over your local network</text>
+</svg>

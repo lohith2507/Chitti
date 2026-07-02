@@ -19,6 +19,14 @@ Chitti is a Windows-native AI assistant that chats like a friend, thinks with th
 
 ---
 
+## How it works
+
+<p align="center">
+  <img src="docs/chitti.svg" alt="Phone voice command opening Netflix and playing Spider-Man on the PC" width="100%" />
+</p>
+
+---
+
 ## ✨ What makes Chitti different
 
 | | Feature | Description |
@@ -268,6 +276,14 @@ Chitti/
 - Conversations and settings are stored in your browser's `localStorage`, not sent anywhere except the LLM provider you chose.
 - Destructive actions are guarded: `shutdown`/`restart` intentionally return a manual command instead of executing, so nothing powers off by accident.
 - Automation only runs on the machine hosting the server. Anyone on your local network who opens the URL can trigger actions, so use it on trusted networks.
+
+---
+
+## Contribution Snake
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lohith2507/Chitti/output/github-contribution-grid-snake-dark.svg" alt="Contribution snake animation" />
+</p>
 
 ---
 
