@@ -277,16 +277,6 @@ Chitti/
 - Destructive actions are guarded: `shutdown`/`restart` intentionally return a manual command instead of executing, so nothing powers off by accident.
 - Automation only runs on the machine hosting the server. Anyone on your local network who opens the URL can trigger actions, so use it on trusted networks.
 
----
-
-## Contribution Snake
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lohith2507/Chitti/output/github-contribution-grid-snake-dark.svg" alt="Contribution snake animation" />
-</p>
-
----
-
 <div align="center">
 
 Built with care for people who'd rather *talk* to their computer than click around it.
