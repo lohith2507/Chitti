@@ -245,21 +245,34 @@ Then open **http://localhost:3000** — or grab your phone and visit `http://<yo
 
 ```
 Chitti/
+├── docs/
+│   └── chitti.svg        # Architecture / demo diagram used in README
 ├── electron/
 │   └── main.cjs          # Electron main process: window, tray, env, lifecycle
 ├── public/               # PWA manifest, icons, service worker
 ├── src/
 │   ├── Chitti.jsx        # The entire React UI (chat, voice, settings, routing)
 │   └── main.jsx          # React entry point
-├── server.js             # Express API: /api/chat (LLM router) + /api/automate
+├── server.js             # Express API: /health, /api/providers, /api/chat, /api/automate
 ├── automation.js         # Windows control: apps, screenshots, system, media…
 ├── generate-icons.js     # Icon generation helper
+├── Dockerfile            # Multi-stage Node 22 image for the Express server
+├── .env.example          # Sample env vars (Groq / NVIDIA / Cerebras / PORT)
 ├── index.html            # App shell
 ├── vite.config.js        # Vite config
 └── package.json          # Scripts, deps, Electron/pkg build config
 ```
 
 ---
+
+## 🔌 API endpoints
+
+| Method | Path | Purpose |
+|---|---|---|
+| `GET` | `/health` | Liveness check; returns status, which providers have keys configured, and uptime |
+| `GET` | `/api/providers` | Lists configured providers and their models (skips providers without a key) |
+| `POST` | `/api/chat` | Chat with smart multi-LLM routing (optional streaming) |
+| `POST` | `/api/automate` | Run a PC automation command from natural language or slash text |
 
 ## ⚙️ Tech stack
 
