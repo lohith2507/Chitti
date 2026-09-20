@@ -1,9 +1,11 @@
-node_modules
-dist
+node_modules/
+dist/
 .env
 server.bundle.cjs
-build
-release
-
-release-desktop
+build/
+release/
+release-desktop/
 *.exe
+.vite/
+*.log
+.DS_Store
