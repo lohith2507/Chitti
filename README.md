@@ -141,6 +141,7 @@ flowchart TD
 | `<<media:ACTION>>` | `/media next` | play / pause / next / previous |
 | `<<apps>>` | `/apps` | Lists apps with a visible window |
 | `<<clipboard>>` | `/clipboard` | Reads current clipboard contents |
+| — | `/copy TEXT` | Writes `TEXT` to the clipboard (slash command only) |
 
 > Natural language works too — "open whatsapp", "how's my pc", "mute", "lock my computer", "what's running" all map to the right action.
 
@@ -219,6 +220,12 @@ npm run dev
 
 # Full production server (builds UI + serves it on http://localhost:3000)
 npm run prod
+
+# Serve a previously built UI without rebuilding (node server.js)
+npm start
+
+# Preview the Vite production build locally
+npm run preview
 
 # Native desktop app (Electron)
 npm run electron:dev
