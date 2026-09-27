@@ -142,6 +142,7 @@ flowchart TD
 | `<<apps>>` | `/apps` | Lists apps with a visible window |
 | `<<clipboard>>` | `/clipboard` | Reads current clipboard contents |
 | — | `/copy TEXT` | Writes `TEXT` to the clipboard (slash command only) |
+| — | `/notify TEXT` | Shows a Windows toast notification with `TEXT` (slash command only) |
 
 > Natural language works too — "open whatsapp", "how's my pc", "mute", "lock my computer", "what's running" all map to the right action.
 
