@@ -276,15 +276,17 @@ export async function setClipboard(text) {
 // ============================
 
 export async function showNotification(title, message) {
+  // ToastText01 (template 0) has a single body field — show the user message, not the fixed title.
+  const body = String(message || title || "").replace(/'/g, "''");
   await ps(`
     [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null;
     $template = [Windows.UI.Notifications.ToastNotificationManager]::GetTemplateContent(0);
     $textNodes = $template.GetElementsByTagName('text');
-    $textNodes.Item(0).AppendChild($template.CreateTextNode('${title.replace(/'/g, "''")}')) | Out-Null;
+    $textNodes.Item(0).AppendChild($template.CreateTextNode('${body}')) | Out-Null;
     $toast = [Windows.UI.Notifications.ToastNotification]::new($template);
     [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier('Chitti').Show($toast)
   `).catch(() => {});
-  return { ok: true, message: `Notification sent: ${title}` };
+  return { ok: true, message: `Notification sent: ${message || title}` };
 }
 
 // ============================
