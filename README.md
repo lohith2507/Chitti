@@ -192,6 +192,8 @@ Chitti works with multiple providers — you only need **one** to start, but mor
 | **NVIDIA NIM** | [build.nvidia.com](https://build.nvidia.com) | code, DSA, reasoning |
 | **Cerebras** | [cloud.cerebras.ai](https://cloud.cerebras.ai) | fastest inference |
 
+> **Note:** `server.js` currently routes requests only to Groq and NVIDIA NIM. `CEREBRAS_API_KEY` is reserved in `.env.example`, but no Cerebras models are wired into the router yet.
+
 ### 2. Configure your environment
 
 ```bash
