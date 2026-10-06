@@ -3,3 +3,7 @@ dist
 .env
 *.md
 .git
+release
+release-desktop
+server.bundle.cjs
+*.log
