@@ -1,4 +1,4 @@
-// Generates PWA icons as SVG-based PNGs using canvas
+// Generates PWA icon SVGs (favicon + 192/512) into public/; no canvas/PNG conversion
 // Run: node generate-icons.js
 
 import { writeFileSync } from "fs";
