@@ -265,7 +265,7 @@ Chitti/
 │   └── main.jsx          # React entry point
 ├── server.js             # Express API: /health, /api/providers, /api/chat, /api/automate
 ├── automation.js         # Windows control: apps, screenshots, system, media…
-├── generate-icons.js     # Icon generation helper
+├── generate-icons.js     # Writes PWA SVG icons (favicon, 192, 512) into public/
 ├── Dockerfile            # Multi-stage Node 22 image for the Express server
 ├── .env.example          # Sample env vars (Groq / NVIDIA / Cerebras / PORT)
 ├── index.html            # App shell
