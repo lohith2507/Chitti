@@ -48,7 +48,9 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // Cache-first for hashed static assets (they are immutable per build).
+  // Cache-first for every other GET. Hashed bundles are immutable per build, but
+  // unhashed files (icons, manifest.json) are also served from cache here, so they
+  // only refresh after CACHE_NAME is bumped.
   e.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
