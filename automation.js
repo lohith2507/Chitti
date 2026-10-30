@@ -11,7 +11,9 @@ import { readFile, unlink } from "fs/promises";
 
 const run = promisify(exec);
 
-// Run a PowerShell command safely
+// Run a PowerShell command (Windows only) and return trimmed stdout.
+// Escapes double quotes so cmd fits inside -Command "..."; it does not
+// sanitize other input, so never pass untrusted text straight through.
 async function ps(cmd, timeout = 10000) {
   const { stdout, stderr } = await run(
     `powershell -NoProfile -NonInteractive -Command "${cmd.replace(/"/g, '\\"')}"`,
