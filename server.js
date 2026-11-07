@@ -70,6 +70,7 @@ const TASK_PATTERNS = {
   quick: /\b(what is|who is|when|where|define|meaning|translate|convert|calculate|how much|how many|yes or no|true or false|list|name)\b/i,
 };
 
+/** Keyword-classify text into a ROUTING_TABLE key (code → dsa → reasoning → creative → quick → general). First matching pattern wins. */
 function classifyTask(text) {
   const lower = text.toLowerCase();
   // Check patterns in priority order
