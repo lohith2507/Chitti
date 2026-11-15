@@ -3,13 +3,8 @@ dist/
 .env
 .env.*
 !.env.example
-server.bundle.cjs
-build/
+*.log
 release/
 release-desktop/
-*.exe
-.vite/
-*.log
-.DS_Store
 Thumbs.db
-desktop.ini
+.DS_Store
