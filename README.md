@@ -200,7 +200,7 @@ Chitti works with multiple providers — you only need **one** to start, but mor
 cp .env.example .env
 ```
 
-Then edit `.env`:
+Then edit `.env` (it is git-ignored, so your keys are never committed):
 
 ```ini
 GROQ_API_KEY=gsk_your_key_here
