@@ -236,6 +236,8 @@ npm run electron:dev
 
 Then open **http://localhost:3000** — or grab your phone and visit `http://<your-pc-ip>:3000`.
 
+> If port 3000 is already in use, Chitti automatically falls back to another free port, so use that port in the URLs above.
+
 ---
 
 ## 📦 Building distributables
@@ -305,3 +307,4 @@ Chitti/
 Built with care for people who'd rather *talk* to their computer than click around it.
 
 </div>
+
