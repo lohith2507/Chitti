@@ -68,7 +68,7 @@ Chitti is a Windows-native AI assistant that chats like a friend, thinks with th
               └────────────────────────┘   └──────────────────┘
 ```
 
-The **same Express server** powers both the desktop window and any phone on the network — the Electron window is just a browser pointed at `127.0.0.1`.
+The **same Express server** powers both the desktop window and any phone on the network — the Electron window is just a browser pointed at `127.0.0.1`. From your phone, open the PC's local network address on the same port instead.
 
 ---
 
